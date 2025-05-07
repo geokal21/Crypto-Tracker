@@ -18,14 +18,14 @@ function displayCryptos(coins) {
   const container = document.getElementById('crypto-container');
   container.innerHTML = '';
 
-  coins.forEach(coin => {
+  coins.forEach((coin, index) => {
     const card = document.createElement('div');
     card.className = 'card';
 
     card.innerHTML = `
     <div class="card-header">
       <img src="${coin.image}" alt="${coin.name}">
-      <h2 class="crypto-name">${coin.name}</h2>
+      <h2 class="crypto-name">${index + 1}. ${coin.name}</h2>
     </div>
     <div class="card-body">  
       <p><strong>Τιμή:</strong> €${coin.current_price.toLocaleString()}</p>
